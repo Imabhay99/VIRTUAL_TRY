@@ -39,11 +39,11 @@ router.post("/", protectRoute, async (req, res) => {
 // pagination => infinite loading
 router.get("/", protectRoute, async (req, res) => {
   // example call from react native - frontend
-  // const response = await fetch("http://localhost:3000/api/cloths?page=1&limit=5");
+  // const response = await fetch("http://localhost:3000/api/cloths?cloth=1&limit=5");
   try {
-    const page = req.query.page || 1;
+    const cloth = req.query.cloth || 1;
     const limit = req.query.limit || 2;
-    const skip = (page - 1) * limit;
+    const skip = (cloth - 1) * limit;
 
     const cloths = await cloth
       .find()
@@ -56,9 +56,9 @@ router.get("/", protectRoute, async (req, res) => {
 
     res.send({
       cloths,
-      currentPage: page,
+      currentcloth: cloth,
       totalcloths,
-      totalPages: Math.ceil(totalcloths / limit),
+      totalcloths: Math.ceil(totalcloths / limit),
     });
   } catch (error) {
     console.log("Error in get all cloths route", error);
