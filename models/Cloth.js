@@ -1,3 +1,4 @@
+// backend/models/Cloth.js
 import mongoose from "mongoose";
 
 const clothSchema = new mongoose.Schema(

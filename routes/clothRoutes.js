@@ -1,3 +1,4 @@
+// backend/routes/clothRoutes.js
 import express from "express";
 import cloudinary from "../lib/cloudinary.js";
 import cloth from "../models/Cloth.js";
